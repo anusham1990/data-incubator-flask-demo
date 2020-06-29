@@ -1,0 +1,31 @@
+<!doctype html>
+<title>Stock Price</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static', filename='stock_style.css')}}'>
+<div class=page>
+    <h1>Stock Price Flask Demo</h1>
+    <div class =metanave>
+
+        <h4>
+            View plot below or select another company.
+        </h4>
+
+        <form id='Form' method='post' action='home' >
+            <p>
+        <input type="radio" name="options" id="PDD" value = "PDD"/> PDD <br>
+        <input type="radio" name="options" id="INTC" value = "INTC"/> INTC <br>
+        <input type="radio" name="options" id="QCOM" value = "QCOM"/> QCOM <br>
+            </p>
+            <p>
+        <input type='submit' value = 'Submit' />
+            </p>
+        </form>
+        <h4>
+            Requested company: {{company}}
+        </h4>
+        
+    </div>
+    <div>
+        <iframe src="bokehPlot" name="targetframe" width=700 height=620  allowTransparency="true" scrolling="no" frameborder=3px >
+        </iframe>
+    </div>
+</div>
